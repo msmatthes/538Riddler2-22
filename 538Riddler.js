@@ -1,14 +1,14 @@
 //Created By Maxwell Matthes
 
 //recursiveSearch(rightProd: number[], botProd: number[], i: number, fNumbers: number[]): null
-function recursiveSearch(rightProd, botProd, i, fNumbers){
-  for(let x = 100; x < 1000; ++x){
+function recursiveSearch(rightProd, botProd, i, fNumbers, rLen, bLen){
+  for(let x = Math.pow(10, bLen-1); x < Math.pow(10, bLen); ++x){
     let tArray = convertNumb(x);
     if(tArray[3] === rightProd[i]){
       fNumbers.push(tArray);
-      if(i !== 6){
+      if(i !== rLen-1){
         ++i;
-        recursiveSearch(rightProd, botProd, i, fNumbers);
+        recursiveSearch(rightProd, botProd, i, fNumbers, rLen, bLen);
         fNumbers.pop();
         --i;
       }
@@ -34,7 +34,7 @@ function recursiveSearch(rightProd, botProd, i, fNumbers){
 function convertNumb(p){
   let fin = [];
   let prod = 1;
-  for(let x = 100; x >= 1; x/=10){
+  for(let x = Math.pow(10, p.toString().length-1) ; x >= 1; x/=10){
     let n = Math.floor(p/x);
     fin.push(n);
     p-=n*x;
@@ -48,4 +48,5 @@ let rightProd = [280, 168, 162, 360, 60, 256, 126];
 let botProd = [183708, 245760, 117600];
 let i = 0;
 let fNumbers = [];
-recursiveSearch(rightProd, botProd, i, fNumbers)
+recursiveSearch(rightProd, botProd, i, fNumbers, rightProd.length, botProd.length);
+console.log("Found all possible Combos!);
