@@ -49,4 +49,4 @@ let botProd = [183708, 245760, 117600];
 let i = 0;
 let fNumbers = [];
 recursiveSearch(rightProd, botProd, i, fNumbers, rightProd.length, botProd.length);
-console.log("Found all possible Combos!);
+console.log("Found all possible Combos!");
