@@ -1,6 +1,6 @@
 //Created By Maxwell Matthes
 
-//recursiveSearch(rightProd: number[], botProd: number[], i: number, fNumbers: number[], rLen: number[], bLen: number[]): null
+//recursiveSearch(rightProd: number[], botProd: number[], i: number, fNumbers: number[], rLen: number, bLen: number): null
 function recursiveSearch(rightProd, botProd, i, fNumbers, rLen, bLen){
   for(let x = Math.pow(10, bLen-1); x < Math.pow(10, bLen); ++x){
     let tArray = convertNumb(x);
