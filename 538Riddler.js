@@ -22,7 +22,7 @@ function recursiveSearch(rightProd, botProd, i, fNumbers, rLen, bLen){
           t = (sum === botProd[j]) ? t : 0;
         }
         if(t === 1){ //If all comumns match, print the solution
-          console.log(fNumbers);
+          printArray(fNumbers);
         }
         fNumbers.pop();
       }
@@ -43,6 +43,20 @@ function convertNumb(p){
   }
   fin.push(prod);
   return fin;
+}
+
+//Prints the formatted array
+//printArray(fNumbers: number[]): NULL
+function printArray(fNumbers){
+  for(let i = 0; i < fNumbers.length; ++i){
+    let sum = 0;
+    let count = 1;
+    for(let j = 0; j < fNumbers[i].length-1; ++j){
+      sum += fNumbers[i][j] * count;
+      count *= 10;
+    }
+    console.log(sum.toString(), '\n');
+  }
 }
 
 let rightProd = [1458, 128, 2688, 125];
