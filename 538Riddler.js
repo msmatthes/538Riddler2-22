@@ -4,7 +4,7 @@
 function recursiveSearch(rightProd, botProd, i, fNumbers, rLen, bLen){
   for(let x = Math.pow(10, bLen-1); x < Math.pow(10, bLen); ++x){
     let tArray = convertNumb(x);
-    if(tArray[3] === rightProd[i]){
+    if(tArray[bLen] === rightProd[i]){
       fNumbers.push(tArray);
       if(i !== rLen-1){
         ++i;
@@ -44,8 +44,8 @@ function convertNumb(p){
   return fin;
 }
 
-let rightProd = [280, 168, 162, 360, 60, 256, 126];
-let botProd = [183708, 245760, 117600];
+let rightProd = [1458, 128, 2688, 125];
+let botProd = [960, 384, 630, 270];
 let i = 0;
 let fNumbers = [];
 recursiveSearch(rightProd, botProd, i, fNumbers, rightProd.length, botProd.length);
