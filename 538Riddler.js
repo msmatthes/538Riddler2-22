@@ -50,10 +50,9 @@ function convertNumb(p){
 function printArray(fNumbers){
   for(let i = 0; i < fNumbers.length; ++i){
     let sum = 0;
-    let count = 1;
     for(let j = 0; j < fNumbers[i].length-1; ++j){
-      sum += fNumbers[i][j] * count;
-      count *= 10;
+      sum *= 10;
+      sum += fNumbers[i][j];
     }
     console.log(sum.toString(), '\n');
   }
